@@ -1,0 +1,9 @@
+<section>
+  <h1>Tennis</h1>
+  <h2 *ngIf="winner">{{winner}} wins!</h2>
+  <p>Player 1 score: <span *ngIf="!deuce">{{players.p1.score}}</span><span *ngIf="deuce">Deuce</span><span *ngIf="advantage === 'p1'"> - has advantage</span></p>
+  <p>Player 2 score: <span *ngIf="!deuce">{{players.p2.score}}</span><span *ngIf="deuce">Deuce</span><span *ngIf="advantage === 'p2'"> - has advantage</span></p>
+  <button [disabled]="winner" (click)="addScore('p1')">Player 1 scores</button>
+  <button [disabled]="winner" (click)="addScore('p2')">Player 2 scores</button>
+  <button (click)="reset();">Reset</button>
+</section>
